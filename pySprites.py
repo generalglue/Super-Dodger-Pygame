@@ -7,11 +7,11 @@ import pygame, random
 pygame.mixer.init()
 
 # Sound effect when the player uses its pickaxe
-pickAxeSound = pygame.mixer.Sound("pickAxeHit.wav")
+pickAxeSound = pygame.mixer.Sound("sound/pickAxeHit.wav")
 pickAxeSound.set_volume(0.5)
 
 # Sound effect when the player uses its mop
-mopSound = pygame.mixer.Sound("mopHit.wav")
+mopSound = pygame.mixer.Sound("sound/mopHit.wav")
 mopSound.set_volume(0.5)
 
 class Player(pygame.sprite.Sprite):
@@ -25,8 +25,8 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # List of sprite images used by the class
-        self.__playerImage = ['playerStandingLeft.gif', 'playerStandingRight.gif', 'playerLeft.gif', 'playerRight.gif', 'playerMopRight.gif', 'playerMopRight2.gif'\
-                              , 'playerMopLeft.gif', 'playerMopLeft2.gif', 'playerAxeRight.gif', 'playerAxeRight2.gif', 'playerAxeLeft.gif', 'playerAxeLeft2.gif', 'playerHit.gif']
+        self.__playerImage = ['images/playerStandingLeft.gif', 'images/playerStandingRight.gif', 'images/playerLeft.gif', 'images/playerRight.gif', 'images/playerMopRight.gif', 'images/playerMopRight2.gif'\
+                              , 'images/playerMopLeft.gif', 'images/playerMopLeft2.gif', 'images/playerAxeRight.gif', 'images/playerAxeRight2.gif', 'images/playerAxeLeft.gif', 'images/playerAxeLeft2.gif', 'images/playerHit.gif']
         
         # Set the image and rect attributes for the player
         self.image = pygame.image.load(self.__playerImage[1])
@@ -274,7 +274,7 @@ class Ground(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # Set image and rect attributes for the Ground
-        self.image = pygame.image.load('ground.gif')
+        self.image = pygame.image.load('images/ground.gif')
         self.rect = self.image.get_rect()
         self.rect.bottom = screen.get_height()
         self.__topGround = self.rect.top - 31
@@ -293,7 +293,7 @@ class LiveCounter(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # List of sprite images used by the class
-        self.__livesImages = ['fiveHearts.gif', 'fourHearts.gif', 'threeHearts.gif', 'twoHearts.gif', 'oneHeart.gif', 'noHeart.gif']
+        self.__livesImages = ['images/fiveHearts.gif', 'images/fourHearts.gif', 'images/threeHearts.gif', 'images/twoHearts.gif', 'images/oneHeart.gif', 'images/noHeart.gif']
         
         
         # This instance variable counts which image the sprite should load
@@ -339,8 +339,8 @@ class Meteor(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
       
         # List of sprite images used by the class
-        self.__meteorImages = ['meteorOne.gif', 'meteorTwo.gif', 'meteorThree.gif', 'meteorFour.gif', 'meteorFive.gif',\
-                           'meteorSix.gif', 'meteorSeven.gif', 'meteorEight.gif', 'meteorNine.gif']
+        self.__meteorImages = ['images/meteorOne.gif', 'images/meteorTwo.gif', 'images/meteorThree.gif', 'images/meteorFour.gif', 'images/meteorFive.gif',\
+                           'images/meteorSix.gif', 'images/meteorSeven.gif', 'images/meteorEight.gif', 'images/meteorNine.gif']
     
         # This instance variable counts which image the sprite should load
         self.__animationCount = 0
@@ -408,7 +408,7 @@ class Puddle(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # Set the image for the sprite and rect attributes
-        self.image = pygame.image.load('puddle.gif')
+        self.image = pygame.image.load('images/puddle.gif')
         self.rect = self.image.get_rect()
         self.rect.centerx = groundX
         self.rect.bottom= screen.get_height()
@@ -423,9 +423,9 @@ class Lakitu(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # List of sprite images used by the class
-        self.__lakituImages = ['lakitu.gif', 'lakituThrow1.gif', 'lakituThrow2.gif', 'lakituThrow3.gif', 'lakituThrow4.gif', 'lakituThrow5.gif', \
-                               'lakituThrow6.gif', 'lakituThrow7.gif', 'lakituThrow8.gif', 'lakituThrow9.gif', 'lakituThrow10.gif', 'lakituThrow11.gif', \
-                               'lakituThrow12.gif', 'lakituThrow13.gif', 'lakituThrow14.gif', 'lakituThrow15.gif', 'lakituThrow16.gif', 'lakituThrow17.gif']
+        self.__lakituImages = ['images/lakitu.gif', 'images/lakituThrow1.gif', 'images/lakituThrow2.gif', 'images/lakituThrow3.gif', 'images/lakituThrow4.gif', 'images/lakituThrow5.gif', \
+                               'images/lakituThrow6.gif', 'images/lakituThrow7.gif', 'images/lakituThrow8.gif', 'images/lakituThrow9.gif', 'images/lakituThrow10.gif', 'images/lakituThrow11.gif', \
+                               'images/lakituThrow12.gif', 'images/lakituThrow13.gif', 'images/lakituThrow14.gif', 'images/lakituThrow15.gif', 'images/lakituThrow16.gif', 'images/lakituThrow17.gif']
 
         # Set the sprite's image and sets the rect attributes
         self.__animationCount = 0  
@@ -486,7 +486,7 @@ class Stain(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # List of sprite images used by the class  
-        self.__stainImages = ['stainOne.gif', 'stainTwo.gif','stainOne.gif', 'stainTwo.gif','stainOne.gif', 'stainTwo.gif',]
+        self.__stainImages = ['images/stainOne.gif', 'images/stainTwo.gif','images/stainOne.gif', 'images/stainTwo.gif','images/stainOne.gif', 'images/stainTwo.gif',]
         
         # Set the sprite's image and sets the rect attributes
         self.__animationCount = 0
@@ -551,11 +551,11 @@ class Bomb(pygame.sprite.Sprite):
 
     def pinkBomb(self):
         ''' This method sets the images of the bomb to a pink colour '''
-        self.__bombImage = ['pinkBomb.gif', 'pinkBomb1.gif', 'pinkBomb2.gif', 'pinkBomb3.gif', 'pinkBomb4.gif']
+        self.__bombImage = ['images/pinkBomb.gif', 'images/pinkBomb1.gif', 'images/pinkBomb2.gif', 'images/pinkBomb3.gif', 'images/pinkBomb4.gif']
         
     def blackBomb(self):
         ''' This method sets the images of the bomb to a black colour '''
-        self.__bombImage = ['blackBomb.gif', 'blackBomb1.gif', 'blackBomb2.gif', 'blackBomb3.gif', 'blackBomb4.gif']
+        self.__bombImage = ['images/blackBomb.gif', 'images/blackBomb1.gif', 'images/blackBomb2.gif', 'images/blackBomb3.gif', 'images/blackBomb4.gif']
         
     def setBombType(self):
         ''' This method sets the bomb type '''
@@ -659,10 +659,11 @@ class Explosion(pygame.sprite.Sprite):
         
         # Set the image for the sprite and rect attributes
         if bombType == 0:
-            self.__explosionImage = ['circleExplosion.gif', 'circleExplosion1.gif', 'circleExplosion2.gif', 'circleExplosion3.gif', 'circleExplosion4.gif', 'circleExplosion5.gif', 'circleExplosion6.gif',\
-                                     'circleExplosion7.gif', 'circleExplosion8.gif', 'circleExplosion9.gif', 'circleExplosion10.gif', 'circleExplosion11.gif', 'circleExplosion12.gif', 'circleExplosion13.gif', 'circleExplosion14.gif']
+            self.__explosionImage = ['images/circleExplosion.gif', 'images/circleExplosion1.gif', 'images/circleExplosion2.gif', 'images/circleExplosion3.gif', 'images/circleExplosion4.gif', 'images/circleExplosion5.gif', 'images/circleExplosion6.gif',\
+                                     'images/circleExplosion7.gif', 'images/circleExplosion8.gif', 'images/circleExplosion9.gif', 'images/circleExplosion10.gif', 'images/circleExplosion11.gif', 'images/circleExplosion12.gif',\
+                                     'images/circleExplosion13.gif', 'images/circleExplosion14.gif']
         else:
-            self.__explosionImage = ['lineExplosion.gif', 'lineExplosion1.gif', 'lineExplosion2.gif', 'lineExplosion3.gif', 'lineExplosion4.gif']
+            self.__explosionImage = ['images/lineExplosion.gif', 'images/lineExplosion1.gif', 'images/lineExplosion2.gif', 'images/lineExplosion3.gif', 'images/lineExplosion4.gif']
             
         self.__bombType = bombType
         self.__animationCount = 0
@@ -740,7 +741,7 @@ class PowerUp(pygame.sprite.Sprite):
         # Call the sprite __init__() method               
         pygame.sprite.Sprite.__init__(self)
         
-        self.image = pygame.image.load('powerUp.gif')
+        self.image = pygame.image.load('images/powerUp.gif')
         self.rect = self.image.get_rect()
         self.rect.left = random.randrange(0,640)
         
@@ -787,7 +788,7 @@ class Button(pygame.sprite.Sprite):
         # Call the sprite __init__() method               
         pygame.sprite.Sprite.__init__(self)
         
-        self.__buttonImages = ['startButton.png', 'controlButton.png', 'quitButton.png', 'startButtonEnlarge.png', 'controlButtonEnlarge.png', 'quitButtonEnlarge.png']
+        self.__buttonImages = ['images/startButton.png', 'images/controlButton.png', 'images/quitButton.png', 'images/startButtonEnlarge.png', 'images/controlButtonEnlarge.png', 'images/quitButtonEnlarge.png']
         self.image = pygame.image.load(self.__buttonImages[buttonType])
         self.rect = self.image.get_rect()
             
@@ -841,6 +842,6 @@ class ControlMenu(pygame.sprite.Sprite):
         # Call the sprite __init__() method               
         pygame.sprite.Sprite.__init__(self)
         
-        self.image = pygame.image.load('controls.png')
+        self.image = pygame.image.load('images/controls.png')
         self.rect = self.image.get_rect()
         

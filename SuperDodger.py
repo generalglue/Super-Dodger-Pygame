@@ -21,38 +21,38 @@ def main():
     # Instantiate music and sound effects
     
     # Background music
-    pygame.mixer.music.load('background.mp3')
+    pygame.mixer.music.load('sound/background.mp3')
     pygame.mixer.music.set_volume(0.3)
 
     # Sound effect when a bomb explodes
-    explosionSound = pygame.mixer.Sound("explosion.wav")
+    explosionSound = pygame.mixer.Sound("sound/explosion.wav")
     explosionSound.set_volume(0.1)
     
     # Sound effect when the player gets hit by an object
-    hitSound = pygame.mixer.Sound("hit.wav")
+    hitSound = pygame.mixer.Sound("sound/hit.wav")
     hitSound.set_volume(0.5)
     
     # Sound effect when the player gets hit by a stain
-    stainHitSound = pygame.mixer.Sound("stainHit.wav")
+    stainHitSound = pygame.mixer.Sound("sound/stainHit.wav")
     stainHitSound.set_volume(0.8)
     
     # Sound effect when the player gets a life-up
-    lifeUpSound = pygame.mixer.Sound("lifeUp.wav")
+    lifeUpSound = pygame.mixer.Sound("sound/lifeUp.wav")
     lifeUpSound.set_volume(0.5)
     
     # Sound effect when the game starts
-    startUpSound = pygame.mixer.Sound("startUp.wav")
+    startUpSound = pygame.mixer.Sound("sound/startUp.wav")
     startUpSound.set_volume(0.5)
     
     # Sound effect when the game ends
-    gameOverSound = pygame.mixer.Sound("gameOver.wav")
+    gameOverSound = pygame.mixer.Sound("sound/gameOver.wav")
     gameOverSound.set_volume(0.5)
     
     # Instantiate the font used for the game
     font = pygame.font.Font("goodbyeDespair.ttf", 30)
     
     # Instantiates the background
-    background = pygame.image.load('background.png')
+    background = pygame.image.load('images/background.png')
     background = background.convert()
     screen.blit(background, (0, 0))
        
@@ -403,7 +403,7 @@ def startMenu():
 
     
     # Instantiates the background
-    background = pygame.image.load('StartMenu.png')
+    background = pygame.image.load('images/StartMenu.png')
     background = background.convert()
     screen.blit(background, (0, 0))
     
@@ -414,12 +414,12 @@ def startMenu():
     allSprites = pygame.sprite.Group(buttonGroup)
     
     # Instantiate the background music
-    pygame.mixer.music.load('menu.mp3')
+    pygame.mixer.music.load('sound/menu.mp3')
     pygame.mixer.music.set_volume(0.3)    
     pygame.mixer.music.play(-1)
     
     # Instantiate sound effect when selecting a button
-    menuSelect = pygame.mixer.Sound("menuSelect.wav")
+    menuSelect = pygame.mixer.Sound("sound/menuSelect.wav")
     menuSelect.set_volume(0.2)
                           
     # ASSIGN 
